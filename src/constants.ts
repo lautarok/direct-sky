@@ -9,11 +9,3 @@ export const httpConstants = {
       : ''
   ]
 }
-
-export const wsConstants = {
-  port: 3001,
-  origin: [
-    !process.env.PROD ? 'http://localhost:5173'
-      : ''
-  ]
-}

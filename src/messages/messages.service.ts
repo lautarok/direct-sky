@@ -88,7 +88,10 @@ export class MessagesService {
     }
 
     clients.forEach(client => {
-      if(client.email === toUser.email) {
+      if(
+        client.email === toUser.email
+        || (client.email === user.email && client.uuid !== dto.sessionUUID)
+      ) {
         client.ws.send(JSON.stringify(result));
       }
     });

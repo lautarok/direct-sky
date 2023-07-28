@@ -3,24 +3,19 @@ import {
   WebSocketGateway,
   WsException
 } from '@nestjs/websockets';
-import { wsConstants } from 'src/constants';
 import { JwtService } from '@nestjs/jwt';
 
 export const clients = [];
 
-@WebSocketGateway(wsConstants.port, {
-  cors: {
-    origin: wsConstants.origin
-  }
-})
+@WebSocketGateway()
 export class MessagesGateway {
   constructor(
     private jwtService: JwtService
   ) {}
 
   @SubscribeMessage('receiveMessages')
-  handleMessage(client: any, payload: any): string {
-    const tokenPayload = this.jwtService.decode(payload);
+  handleMessage(client: any, { token, sessionUUID }: any): string {
+    const tokenPayload = this.jwtService.decode(token);
 
     if(!tokenPayload) {
       return JSON.stringify({error: 'Invalid token'});
@@ -28,7 +23,8 @@ export class MessagesGateway {
     
     clients.push({
       email: tokenPayload['email'],
-      ws: client
+      ws: client,
+      uuid: sessionUUID
     })
 
     return JSON.stringify({ success: true });
