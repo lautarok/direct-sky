@@ -14,11 +14,11 @@ import { RoomsModule } from './rooms/rooms.module';
       type: 'mysql',
       host: process.env.PROD ? 'db4free.net' : 'localhost',
       port: 3306,
-      username: process.env.prod ? 'direct_sky_2023' : 'root',
-      password: process.env.prod ? '$DirectSky.2023!' : '',
-      synchronize: !process.env.prod,
+      username: process.env.PROD ? 'direct_sky_2023' : 'root',
+      password: process.env.PROD ? '$DirectSky.2023!' : '',
+      synchronize: !process.env.PROD,
       autoLoadEntities: true,
-      database: process.env.prod ? 'direct_sky_chat' : 'chat'
+      database: process.env.PROD ? 'direct_sky_chat' : 'chat'
     }),
     AuthModule,
     UsersModule,
