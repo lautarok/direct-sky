@@ -116,6 +116,10 @@
     main > .content > .layout {
       grid-template-columns: 1fr;
     }
+
+    main > .content > .first_message {
+      padding: 25px;
+    }
   }
 </style>
 
