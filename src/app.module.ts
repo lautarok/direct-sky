@@ -12,13 +12,13 @@ import { RoomsModule } from './rooms/rooms.module';
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: !process.env.PROD ? 'localhost' : 'sql10.freemysqlhosting.net',
+      host: process.env.PROD ? 'localhost' : 'sql10.freemysqlhosting.net',
       port: 3306,
-      username: !process.env.PROD ? 'root' : 'sql10635856',
-      password: !process.env.PROD ? '' : '9iryEmeHfa',
+      username: process.env.PROD ? 'root' : 'sql10635856',
+      password: process.env.PROD ? '' : '9iryEmeHfa',
       synchronize: !process.env.PROD,
       autoLoadEntities: true,
-      database: !process.env.PROD ? 'chat' : 'sql10635856'
+      database: process.env.PROD ? 'chat' : 'sql10635856'
     }),
     AuthModule,
     UsersModule,
