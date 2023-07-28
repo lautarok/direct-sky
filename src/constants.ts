@@ -3,7 +3,7 @@ export const jwtConstants = {
 }
 
 export const httpConstants = {
-  port: 3000,
+  port: process.env.PROD ? 80 : 3000,
   origin: [
     !process.env.PROD ? 'http://localhost:5173'
       : ''
