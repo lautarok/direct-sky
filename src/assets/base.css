@@ -1,0 +1,36 @@
+:root {
+  --background-color: #FFF;
+  --card-color: #CCD7DA50;
+  --text-color: #000;
+  --primary-color: #3f51b5;
+  --primary-color-a10: rgb(63 81 181 / 10%);
+  --primary-color-a20: rgb(63 81 181 / 20%);
+  --primary-color-a30: rgb(63 81 181 / 30%);
+  --primary-color-a50: rgb(63 81 181 / 50%);
+  --border-color: rgb(0 0 0 / 20%);
+  --primary-hover-color: #283593;
+  --accent-color: #e91e63;
+  --accent-color-a10: rgb(233 30 99 / 10%);
+  --accent-color-a20: rgb(233 30 99 / 20%);
+  --accent-color-a30: rgb(233 30 99 / 30%);
+  --accent-hover-color: #d81b60;
+  --error-color: #ff5722;
+  --error-color-a10: rgb(255 87 34 / 10%);
+  --menu-color: #0E2A47;
+  --menu-color2: rgb(20, 61, 104);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #212121;
+    --card-color: #263238;
+    --text-color: #FFF;
+    --border-color: transparent;
+    --primary-color: #4c61da;
+    --primary-color-a10: rgb(63 81 181 / 10%);
+    --primary-color-a20: rgba(75, 96, 214, 0.2);
+    --primary-color-a30: rgba(73, 94, 214, 0.3);
+    --primary-color-a50: rgba(74, 95, 212, 0.5);
+    --primary-hover-color: #313faf;
+  }
+}

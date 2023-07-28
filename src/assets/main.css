@@ -1,0 +1,101 @@
+@import './base.css';
+
+@font-face {
+  font-family: 'Product Sans';
+  src: url('./ProductSans-Regular.woff');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Product Sans';
+  src: url('./ProductSans-Medium.woff');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Product Sans';
+  src: url('./ProductSans-Bold.woff');
+  font-weight: 600;
+}
+
+* {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent !important;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Product Sans';
+}
+
+html, body, #app, main {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+main {
+  background-color: var(--background-color);
+}
+
+a, input[type=submit], button {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+main.center_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+h1 {
+  font-size: 38px;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+span.error {
+  width: 100%;
+  padding: 15px;
+  background-color: var(--error-color-a10);
+  color: var(--error-color);
+  border: solid 1px var(--error-color-a10);
+  margin-bottom: 5px;
+  border-radius: 3px;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+span.error::first-letter {
+  text-transform: uppercase;
+}
+
+*::-webkit-scrollbar {
+  width: 2px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color-a30);
+}
+
+*::-webkit-scrollbar-button {
+  height: 20px;
+}
