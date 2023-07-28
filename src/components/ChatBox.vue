@@ -202,7 +202,7 @@
         <div
           ref='messageField'
           class='message_field'
-          :contentEditable='{"plaintext-only": !loading && !loadingMessages}'
+          :contentEditable='!loading && !loadingMessages ? "plaintext-only" : "false"'
           @keypress.enter.prevent='submitMessage'
           @keypress.enter.shift=''
         ></div>
