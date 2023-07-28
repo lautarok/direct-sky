@@ -41,6 +41,12 @@ export class RoomsService {
         id: room.user1 === user.id ? room.user2 : room.user1
       });
 
+      if(!withUser) {
+        throw new NotFoundException({
+          message: ['user not found']
+        })
+      }
+
       return {
         id: room.roomId,
         withUser: {
@@ -73,7 +79,9 @@ export class RoomsService {
     });
 
     if(!room) {
-      throw new NotFoundException();
+      throw new NotFoundException({
+        message: ['room not found']
+      });
     }
 
     const messages = await this.messagesRepository.find({

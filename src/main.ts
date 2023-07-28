@@ -35,6 +35,7 @@ async function bootstrap() {
     .addTag('Users')
     .addTag('Rooms')
     .addTag('Messages')
+    .addBearerAuth()
     .build();
   const document = SwaggerModule.createDocument(app, documentConfig);
   SwaggerModule.setup('swagger', app, document);

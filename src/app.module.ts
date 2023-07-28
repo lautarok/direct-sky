@@ -12,13 +12,13 @@ import { RoomsModule } from './rooms/rooms.module';
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: process.env.PROD ? 'db4free.net' : 'localhost',
+      host: process.env.MYSQL_HOSTNAME || 'localhost',
       port: 3306,
-      username: process.env.PROD ? 'direct_sky_2023' : 'root',
-      password: process.env.PROD ? '$DirectSky.2023!' : '',
+      username: process.env.MYSQL_USERNAME || 'root',
+      password: process.env.MYSQL_PASSWORD || '',
       synchronize: !process.env.PROD,
       autoLoadEntities: true,
-      database: process.env.PROD ? 'direct_sky_chat' : 'chat'
+      database: process.env.MYSQL_DATABASE || 'chat'
     }),
     AuthModule,
     UsersModule,

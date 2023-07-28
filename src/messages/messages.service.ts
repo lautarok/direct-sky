@@ -29,10 +29,12 @@ export class MessagesService {
     });
 
     if(!toUser) {
-      throw new NotFoundException();
+      throw new NotFoundException({
+        message: 'target user does not exist'
+      });
     } else if(toUser.id === user.id) {
       throw new UnprocessableEntityException({
-        message: ['You can\'t message yourself']
+        message: ['you can\'t message yourself']
       });
     }
 

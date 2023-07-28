@@ -65,7 +65,7 @@ export class AuthService {
 
     if(matchUser) {
       throw new UnprocessableEntityException({
-        message: [`This ${matchUser.nickname === dto.nickname ? 'nickname' : 'email'} is in use`]
+        message: [`this ${matchUser.nickname === dto.nickname ? 'nickname' : 'email'} is in use`]
       });
     }
 
@@ -75,7 +75,7 @@ export class AuthService {
 
     if(userCountByIp > 2) {
       throw new ForbiddenException({
-        message: ['We\'ve reached the maximum number of accounts that can be created from your IP address.']
+        message: ['we\'ve reached the maximum number of accounts that can be created from your IP address.']
       })
     }
     

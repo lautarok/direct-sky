@@ -14,9 +14,14 @@ export class UsersService {
     const matchUser = await this.usersRepository.findOneBy({ email });
 
     if(!matchUser) {
-      return new NotFoundException();
+      return new NotFoundException({
+        message: ['user not found']
+      });
     }
 
-    return matchUser
+    return {
+      email: matchUser.email,
+      nickname: matchUser.nickname
+    }
   }
 }
