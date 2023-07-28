@@ -1,5 +1,5 @@
 const BASE_URL = !import.meta.env.PROD ? 'http://localhost:3000/' :
-  '';
+  'https://direct-sky-backend.onrender.com/';
 
 const userToken = () => {
   const userDataJson = localStorage.getItem('user_data'),
